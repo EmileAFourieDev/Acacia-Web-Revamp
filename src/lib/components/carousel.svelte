@@ -5,7 +5,7 @@
 	import BannerImg1 from '../images/Bar-2.avif';
 	import Autoplay from 'embla-carousel-autoplay';
 
-	export let images = [BannerImg1, BannerImg];
+	export let images: Array<any> = [];
 	export let jump = true;
 </script>
 
@@ -21,19 +21,32 @@
 	class="w-full  h-full m-0"
 >
 	<Carousel.Content class="h-[60vh] lg:h-[80vh] w-full p-0">
-		{#each images as image, i (i)}
-			<Carousel.Item class="h-full w-full p-0">
-				<div class="h-full w-full p-0">
-					<Card.Root class="w-full h-full p-0">
-						<img
-							src={image}
-							class="object-cover w-full h-full"
-							alt="Acacia Drinks being served in glasses"
-							loading="eager"
-						/>
-					</Card.Root>
-				</div>
-			</Carousel.Item>
+		{#each images as image}
+		<Carousel.Item class="h-full w-full">
+		<!-- Re-introducing the picture element with a crucial check -->
+		<picture>
+			<!-- Add this conditional check for image.sources -->
+			{#if image && image.sources && Array.isArray(image.sources)}
+			{#each image.sources as source}
+			<source srcset={source.srcset} type={source.type} />
+			{/each}
+			{:else}
+			<!-- This block will render if image.sources is not an array for some reason -->
+			<img src={image.img.src || ''} alt="Fallback image could not load" class="w-full h-full object-cover" />
+			<p style="color: red;">Warning: Sources for this image could not be loaded or are not an array.</p>
+			{/if}
+			<!-- The main img tag is always needed as a fallback for the picture element -->
+			<!-- Ensure image.img.src is defensively checked to avoid errors if it's undefined -->
+			{#if image && image.img && image.img.src}
+			<img src={image.img.src} alt="" loading="lazy" class="w-full h-full object-cover" />
+			{:else}
+			<!-- If even the main img.src is missing -->
+			<div class="w-full h-full bg-gray-200 flex items-center justify-center">
+				<p>Image not available.</p>
+			</div>
+			{/if}
+		</picture>
+	</Carousel.Item>
 		{/each}
 	</Carousel.Content>
 </Carousel.Root>

@@ -3,13 +3,17 @@
 	import { Button } from './ui/button';
 	import Select from './select.svelte';
 	import Carousel from './carousel.svelte';
-	import Restaurant1 from '$lib/images/restaurant1-new.jpg';
-	import SwimmingPool1 from '$lib/images/SwimmingPool2.jpg';
-	import Kitchen1 from '$lib/images/Kitchen2.jpg';
+	import Restaurant1 from '$lib/images/restaurant1-new.jpg?w=800;1200;1600&format=webp;avif&as=picture';
+	import SwimmingPool1 from '$lib/images/SwimmingPool2.jpg?w=800;1200;1600&format=webp;avif&as=picture';
+	import Kitchen1 from '$lib/images/Kitchen2.jpg?w=800;1200;1600&format=webp;avif&as=picture';
 	import BookDialog from './book-dialog.svelte';
 	import type { DateValue } from '@internationalized/date';
 
 	const images = [Restaurant1, SwimmingPool1, Kitchen1];
+
+	console.log('Images passed to carousel:', images);
+	// And check individual image objects
+	console.log('Restaurant1 object:', Restaurant1);
 
 	export let checkIn: DateValue | undefined = undefined;
 	export let checkOut: DateValue | undefined = undefined;
