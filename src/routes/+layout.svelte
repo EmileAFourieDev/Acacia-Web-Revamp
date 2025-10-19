@@ -40,6 +40,7 @@
 	<title
 		>Acacia Village. Welcome to one of Juba’s safest and most comfortable residential compounds.
 	</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </svelte:head>
 {#if visible}
 	<section in:fade={{ duration }} class="w-screen overflow-x-hidden relative">

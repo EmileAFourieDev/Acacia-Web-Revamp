@@ -28,10 +28,10 @@
 			<img src={Food} alt="" class="h-full object-cover rounded-[8px]" />
 			<img src={Banner} alt="" class="h-full rounded-[8px]" />
 			<div class="grid grid-cols-2 gap-4 grid-rows-2">
-				<img src={Lounge} alt="" class="w-full object-cover h-full rounded-[8px]" loading="lazy" />
-				<img src={Cottages} alt="" class="w-full rounded-[8px]" loading="lazy" />
-				<img src={Bed} alt="" class="h-full object-cover rounded-[8px]" loading="lazy" />
-				<img src={Lounger2} alt="" class="h-full object-cover rounded-[8px]" loading="lazy" />
+				<img src={Lounge} alt="" class="w-full object-cover h-full rounded-[8px]" loading="eager" />
+				<img src={Cottages} alt="" class="w-full rounded-[8px]" loading="eager" />
+				<img src={Bed} alt="" class="h-full object-cover rounded-[8px]" loading="eager" />
+				<img src={Lounger2} alt="" class="h-full object-cover rounded-[8px]" loading="eager" />
 			</div>
 		</div>
 	</div>

@@ -8,16 +8,12 @@
 			class="text-2xl block lg:hidden leading-snug w-full text-textPrimary font-semibold lg:font-medium"
 		>
 			Dining <span class="text-primary">Experience</span>
-		</h1>
+		</h1>		
 		<img
 			src={Food}
-			loading="lazy"
-			class="w-4/4 lg:hidden object-contain rounded lg:img-animate"
-			alt="Acacia Drinks being served in glasses"
-		/>
-		<img
-			src={Food}
-			loading="lazy"
+			fetchpriority="high"
+			decoding="async" 
+			loading="eager"
 			class="w-4/4 h-full object-cover hidden lg:block rounded img-animate"
 			alt="Acacia Drinks being served in glasses"
 		/>

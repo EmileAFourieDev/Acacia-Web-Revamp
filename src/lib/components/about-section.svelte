@@ -8,7 +8,6 @@
 	import { type CarouselAPI } from '$lib/components/ui/carousel/context';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 
-	const placeholder = 'https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif';
 	onMount(() => {
 		const elements = document.querySelector('.first').focus();
 	});
@@ -30,12 +29,12 @@
 			<span class="inline-flex"> Your Stay at Acacia Village </span>
 		</h1>
 		<img
-			use:lazyimage
-			src={placeholder}
-			data-src={Cottage1}
-			loading="eager"
-			class="w-4/4 lg:hidden object-contain rounded lg:img-animate"
-			alt="Acacia Drinks being served in glasses"
+		  src="/src/lib/images/Cottage.jpg"
+		  fetchpriority="high"
+		  decoding="async"
+		  loading="eager"
+		  class="w-4/4 lg:hidden object-contain rounded lg:img-animate"
+		  alt="Cottage"
 		/>
 		<div class="hidden lg:grid gap-4">
 			<Carousel.Root bind:api class="p-0 m-0 ">
@@ -45,7 +44,7 @@
 							src={Cottage1}
 							loading="eager"
 							class="w-4/4 h-[60vh] object-cover bg-[url(/Conference.jpg)]"
-							alt="Acacia Drinks being served in glasses"
+							alt="Cottage"
 						/>
 					</Carousel.Item>
 					<Carousel.Item class="m-0 p-0 basis-11/12">
@@ -53,7 +52,7 @@
 							src={PoolRoom}
 							loading="eager"
 							class="w-4/4 h-[60vh] object-cover bg-[url(/Conference.jpg)]"
-							alt="Acacia Drinks being served in glasses"
+							alt="Pool Room"
 						/>
 					</Carousel.Item>
 					<Carousel.Item class="m-0 p-0 basis-11/12">
@@ -61,7 +60,7 @@
 							src={Conference}
 							loading="eager"
 							class="w-4/4 h-[60vh] object-cover bg-[url(/Conference.jpg)]"
-							alt="Acacia Drinks being served in glasses"
+							alt="Conference Room"
 						/>
 					</Carousel.Item>
 				</Carousel.Content>
